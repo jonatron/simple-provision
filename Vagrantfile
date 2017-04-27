@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
             override.vm.network "forwarded_port", guest: 8541, host: 8541
 
             override.vm.provision "shell", path: "conf/installs.sh"
-
+            override.vm.provision "shell", path: "conf/unpriv.sh", privileged: false
 
         end
     end
